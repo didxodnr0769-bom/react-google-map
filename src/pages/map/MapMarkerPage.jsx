@@ -31,12 +31,10 @@ const MapMarkerPage = () => {
       <h1>Map Marker 커스텀 테스트</h1>
       <p>커스텀 마커를 사용한 Google Map 테스트 페이지입니다.</p>
 
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-          <Marker position={center} title="서울 중심지" />
-          {/* 향후 커스텀 마커 구현 예정 */}
-        </GoogleMap>
-      </LoadScript>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
+        <Marker position={center} title="서울 중심지" />
+        {/* 향후 커스텀 마커 구현 예정 */}
+      </GoogleMap>
     </div>
   );
 };

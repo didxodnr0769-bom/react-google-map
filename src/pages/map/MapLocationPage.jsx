@@ -40,19 +40,17 @@ const MapLocationPage = () => {
       <h1>Map 현재 위치 표시 테스트</h1>
       <p>사용자의 현재 위치를 표시하는 Google Map 테스트 페이지입니다.</p>
 
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}>
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={mapCenter}
-          zoom={15}
-        >
-          {currentLocation && (
-            <Marker position={currentLocation} title="현재 위치" />
-          )}
-          {/* 기본 위치 마커 */}
-          <Marker position={defaultCenter} title="기본 위치 (서울)" />
-        </GoogleMap>
-      </LoadScript>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={mapCenter}
+        zoom={15}
+      >
+        {currentLocation && (
+          <Marker position={currentLocation} title="현재 위치" />
+        )}
+        {/* 기본 위치 마커 */}
+        <Marker position={defaultCenter} title="기본 위치 (서울)" />
+      </GoogleMap>
     </div>
   );
 };

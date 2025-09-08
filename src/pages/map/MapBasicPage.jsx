@@ -31,11 +31,9 @@ const MapBasicPage = () => {
       <h1>Map 기본 테스트</h1>
       <p>기본적인 Google Map을 표시하는 테스트 페이지입니다.</p>
 
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-          {/* 기본 지도 표시 */}
-        </GoogleMap>
-      </LoadScript>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+        {/* 기본 지도 표시 */}
+      </GoogleMap>
     </div>
   );
 };

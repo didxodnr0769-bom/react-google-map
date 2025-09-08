@@ -14,11 +14,9 @@ const MapPage = () => {
   return (
     <div style={{ padding: "20px" }}>
       <h1>Google Maps with React</h1>
-      <LoadScript googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAP_KEY}>
-        <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-          {/* 마커나 다른 컴포넌트들을 여기에 추가할 수 있습니다 */}
-        </GoogleMap>
-      </LoadScript>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+        {/* 마커나 다른 컴포넌트들을 여기에 추가할 수 있습니다 */}
+      </GoogleMap>
     </div>
   );
 };
