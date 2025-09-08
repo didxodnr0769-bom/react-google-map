@@ -1,8 +1,9 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+  min-height: 100vh;
+}
+
+.main-content {
+  padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
 }
 
 .logo {
