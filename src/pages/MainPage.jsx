@@ -17,8 +17,8 @@ const MainPage = () => {
       ...PAGE_INFO[ROUTES.MAP_MARKER_CUSTOM],
     },
     {
-      path: ROUTES.MAP_LOCATION,
-      ...PAGE_INFO[ROUTES.MAP_LOCATION],
+      path: ROUTES.MAP_CONTROL,
+      ...PAGE_INFO[ROUTES.MAP_CONTROL],
     },
   ];
 

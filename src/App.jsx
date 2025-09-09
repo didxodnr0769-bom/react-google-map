@@ -7,8 +7,8 @@ import MapBasicPage from "@/pages/map/MapBasicPage";
 import MapMarkerPage from "@/pages/map/MapMarkerPage";
 import MapMarkerCustomPage from "@/pages/map/MapMarkerCustomPage";
 import MapLocationPage from "@/pages/map/MapLocationPage";
-import MapPage from "@/pages/map/MapPage";
 import { LoadScript } from "@react-google-maps/api";
+import MapControlPage from "@/pages/map/MapControlPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -36,6 +36,8 @@ function App() {
               />
               {/* 위치 테스트 */}
               <Route path={ROUTES.MAP_LOCATION} element={<MapLocationPage />} />
+              {/* 컨트롤 테스트 */}
+              <Route path={ROUTES.MAP_CONTROL} element={<MapControlPage />} />
             </Routes>
           </main>
         </div>

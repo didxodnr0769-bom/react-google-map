@@ -5,6 +5,7 @@ export const ROUTES = {
   MAP_MARKER: "/map-marker",
   MAP_MARKER_CUSTOM: "/map-marker-custom",
   MAP_LOCATION: "/map-location",
+  MAP_CONTROL: "/map-control",
 };
 
 // 페이지 정보 상수
@@ -24,5 +25,9 @@ export const PAGE_INFO = {
   [ROUTES.MAP_LOCATION]: {
     title: "Map 현재 위치 표시 테스트",
     description: "사용자의 현재 위치를 표시하는 Map 테스트",
+  },
+  [ROUTES.MAP_CONTROL]: {
+    title: "Map 컨트롤 테스트",
+    description: "컨트롤을 이용한 Map 테스트",
   },
 };
