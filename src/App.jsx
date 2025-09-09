@@ -1,11 +1,11 @@
-import "./App.css";
+import "@/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ROUTES } from "./constants/routes";
-import Header from "./components/Header";
-import MainPage from "./pages/MainPage";
-import MapBasicPage from "./pages/map/MapBasicPage";
-import MapMarkerPage from "./pages/map/MapMarkerPage";
-import MapLocationPage from "./pages/map/MapLocationPage";
+import { ROUTES } from "@/constants/routes";
+import Header from "@/components/Header";
+import MainPage from "@/pages/MainPage";
+import MapBasicPage from "@/pages/map/MapBasicPage";
+import MapMarkerPage from "@/pages/map/MapMarkerPage";
+import MapLocationPage from "@/pages/map/MapLocationPage";
 import { LoadScript } from "@react-google-maps/api";
 
 function App() {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { ROUTES, PAGE_INFO } from "../constants/routes";
-import "./MainPage.css";
+import { ROUTES, PAGE_INFO } from "@/constants/routes";
+import "@/pages/MainPage.css";
 
 const MainPage = () => {
   const testPages = [
