@@ -153,6 +153,7 @@ const MapMarkerCustomPage = () => {
             ],
           }}
         >
+          {/* 커스텀 마커 */}
           {customMarkers.map((marker) => (
             <Marker
               key={marker.id}
@@ -163,6 +164,7 @@ const MapMarkerCustomPage = () => {
             />
           ))}
 
+          {/* 선택된 마커의 정보 창 */}
           {selectedMarker && (
             <InfoWindow
               position={selectedMarker.position}

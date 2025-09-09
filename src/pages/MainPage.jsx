@@ -13,6 +13,10 @@ const MainPage = () => {
       ...PAGE_INFO[ROUTES.MAP_MARKER],
     },
     {
+      path: ROUTES.MAP_MARKER_CUSTOM,
+      ...PAGE_INFO[ROUTES.MAP_MARKER_CUSTOM],
+    },
+    {
       path: ROUTES.MAP_LOCATION,
       ...PAGE_INFO[ROUTES.MAP_LOCATION],
     },
