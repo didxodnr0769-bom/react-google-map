@@ -6,6 +6,7 @@ export const ROUTES = {
   MAP_MARKER_CUSTOM: "/map-marker-custom",
   MAP_LOCATION: "/map-location",
   MAP_CONTROL: "/map-control",
+  MAP_DIRECTIONS: "/map-directions",
 };
 
 // 페이지 정보 상수
@@ -29,5 +30,9 @@ export const PAGE_INFO = {
   [ROUTES.MAP_CONTROL]: {
     title: "Map 컨트롤 테스트",
     description: "컨트롤을 이용한 Map 테스트",
+  },
+  [ROUTES.MAP_DIRECTIONS]: {
+    title: "Map 경로 표출 테스트",
+    description: "Directions API를 이용한 경로 표시 및 길찾기 테스트",
   },
 };

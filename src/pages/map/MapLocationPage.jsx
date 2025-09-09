@@ -1,4 +1,4 @@
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ROUTES } from "@/constants/routes";

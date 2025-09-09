@@ -1,4 +1,4 @@
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import { GoogleMap } from "@react-google-maps/api";
 import { Link } from "react-router-dom";
 import { ROUTES } from "@/constants/routes";
 import "@/pages/map/MapPage.css";
