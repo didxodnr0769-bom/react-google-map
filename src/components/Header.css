@@ -98,11 +98,23 @@
 
 @media (max-width: 480px) {
   .header-nav {
-    gap: 10px;
+    gap: 8px;
   }
 
   .header-nav-link {
-    font-size: 0.8rem;
-    padding: 4px 8px;
+    font-size: 0.75rem;
+    padding: 4px 6px;
+  }
+}
+
+/* 매우 작은 화면 (4개 링크 대응) */
+@media (max-width: 380px) {
+  .header-nav {
+    gap: 6px;
+  }
+
+  .header-nav-link {
+    font-size: 0.7rem;
+    padding: 3px 5px;
   }
 }

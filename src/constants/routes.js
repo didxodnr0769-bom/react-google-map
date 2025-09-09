@@ -3,6 +3,7 @@ export const ROUTES = {
   HOME: "/",
   MAP_BASIC: "/map-basic",
   MAP_MARKER: "/map-marker",
+  MAP_MARKER_CUSTOM: "/map-marker-custom",
   MAP_LOCATION: "/map-location",
 };
 
@@ -13,8 +14,12 @@ export const PAGE_INFO = {
     description: "기본적인 Google Map 표시 테스트",
   },
   [ROUTES.MAP_MARKER]: {
-    title: "Map Marker 커스텀 테스트",
-    description: "커스텀 마커를 이용한 Map 테스트",
+    title: "Map Marker 테스트",
+    description: "기본 마커를 이용한 Map 테스트",
+  },
+  [ROUTES.MAP_MARKER_CUSTOM]: {
+    title: "Map 커스텀 마커 테스트",
+    description: "커스텀 마커와 정보창을 이용한 고급 Map 테스트",
   },
   [ROUTES.MAP_LOCATION]: {
     title: "Map 현재 위치 표시 테스트",
