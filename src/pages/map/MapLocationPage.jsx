@@ -2,11 +2,7 @@ import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { ROUTES } from "@/constants/routes";
-
-const containerStyle = {
-  width: "100%",
-  height: "500px",
-};
+import "@/pages/map/MapPage.css";
 
 const defaultCenter = {
   lat: 37.5665, // 서울의 위도
@@ -23,34 +19,29 @@ const MapLocationPage = () => {
   }, []);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <Link
-        to={ROUTES.HOME}
-        style={{
-          color: "#667eea",
-          textDecoration: "none",
-          fontSize: "16px",
-          marginBottom: "20px",
-          display: "inline-block",
-        }}
-      >
-        ← 메인 페이지로 돌아가기
-      </Link>
+    <div className="map-page">
+      <div className="map-page-header">
+        <Link to={ROUTES.HOME} className="map-back-link">
+          ← 메인 페이지로 돌아가기
+        </Link>
 
-      <h1>Map 현재 위치 표시 테스트</h1>
-      <p>사용자의 현재 위치를 표시하는 Google Map 테스트 페이지입니다.</p>
+        <h1>Map 현재 위치 표시 테스트</h1>
+        <p>사용자의 현재 위치를 표시하는 Google Map 테스트 페이지입니다.</p>
+      </div>
 
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={mapCenter}
-        zoom={15}
-      >
-        {currentLocation && (
-          <Marker position={currentLocation} title="현재 위치" />
-        )}
-        {/* 기본 위치 마커 */}
-        <Marker position={defaultCenter} title="기본 위치 (서울)" />
-      </GoogleMap>
+      <div className="map-container">
+        <GoogleMap
+          mapContainerClassName="map-inner"
+          center={mapCenter}
+          zoom={15}
+        >
+          {currentLocation && (
+            <Marker position={currentLocation} title="현재 위치" />
+          )}
+          {/* 기본 위치 마커 */}
+          <Marker position={defaultCenter} title="기본 위치 (서울)" />
+        </GoogleMap>
+      </div>
     </div>
   );
 };

@@ -10,13 +10,23 @@
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
+
+  /* PC 화면 대응 */
+  @media (min-width: 1024px) {
+    padding: 0 40px;
+  }
+
+  /* 태블릿 화면 대응 */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 0 30px;
+  }
 }
 
 .header-logo {
@@ -39,6 +49,11 @@
   display: flex;
   gap: 30px;
   align-items: center;
+
+  /* PC 화면에서 간격 증가 */
+  @media (min-width: 1024px) {
+    gap: 40px;
+  }
 }
 
 .header-nav-link {

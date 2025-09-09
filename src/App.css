@@ -1,9 +1,31 @@
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-content {
+  flex: 1;
   padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
+  width: 100%;
+  max-width: 100%;
+
+  /* PC 화면 대응 */
+  @media (min-width: 1024px) {
+    padding: 70px 40px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* 태블릿 화면 대응 */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    padding: 70px 30px 30px;
+  }
+
+  /* 모바일 화면 대응 */
+  @media (max-width: 767px) {
+    padding: 70px 20px 20px;
+  }
 }
 
 .logo {

@@ -5,9 +5,15 @@
 }
 
 .main-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 20px;
+
+  /* PC 화면 대응 */
+  @media (min-width: 1024px) {
+    padding: 0 40px;
+  }
 }
 
 .main-container h1 {
@@ -15,6 +21,12 @@
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: 700;
+
+  /* PC 화면에서 더 큰 폰트 */
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
 }
 
 .main-container p {
@@ -28,6 +40,20 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
   margin-top: 40px;
+
+  /* PC 화면에서 최대 3개 컬럼으로 제한하고 간격 증가 */
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+  }
+
+  /* 대형 화면에서는 카드 크기 조정 */
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
 }
 
 .test-card {
@@ -40,6 +66,12 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+
+  /* PC 화면에서 더 넉넉한 패딩 */
+  @media (min-width: 1024px) {
+    padding: 40px;
+    border-radius: 20px;
+  }
 }
 
 .test-card:hover {
