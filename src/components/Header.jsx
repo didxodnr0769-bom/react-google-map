@@ -1,27 +1,19 @@
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { ROUTES, PAGE_INFO } from "@/constants/routes";
+import { useLocation } from "react-router-dom";
+import { PAGE_INFO } from "@/constants/routes";
+import SideBar from "./SideBar";
 import "@/components/Header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
-
-  const menuItems = [
-    { path: ROUTES.OVERVIEW, title: "개요" },
-    { path: ROUTES.INTEGRATION, title: "연동 방법" },
-    { path: ROUTES.MAP_BASIC, title: "Map 기본 테스트" },
-    { path: ROUTES.MAP_MARKER, title: "Map Marker 테스트" },
-  ];
-
-  const handleMenuClick = (path) => {
-    navigate(path);
-    setIsOpen(false);
-  };
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsOpen(false);
   };
 
   return (
@@ -46,41 +38,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* 오버레이 */}
-      {isOpen && (
-        <div className="sidebar-overlay" onClick={() => setIsOpen(false)} />
-      )}
-
-      {/* 사이드바 */}
-      <aside className={`sidebar ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-header">
-          <h2>Google Maps React</h2>
-          <button
-            className="close-btn"
-            onClick={() => setIsOpen(false)}
-            aria-label="사이드바 닫기"
-          >
-            ×
-          </button>
-        </div>
-
-        <nav className="sidebar-nav">
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.path}>
-                <button
-                  className={`nav-item ${
-                    location.pathname === item.path ? "active" : ""
-                  }`}
-                  onClick={() => handleMenuClick(item.path)}
-                >
-                  {item.title}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </aside>
+      <SideBar isOpen={isOpen} onClose={closeSidebar} />
     </>
   );
 };
