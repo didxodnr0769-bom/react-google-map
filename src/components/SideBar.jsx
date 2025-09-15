@@ -10,7 +10,8 @@ const SideBar = ({ isOpen, onClose }) => {
     { path: ROUTES.OVERVIEW, title: "개요" },
     { path: ROUTES.INTEGRATION, title: "연동 방법" },
     { path: ROUTES.MAP_BASIC, title: "Map 기본 테스트" },
-    { path: ROUTES.MAP_MARKER, title: "Map Marker 테스트" },
+    { path: ROUTES.MAP_MARKER, title: "Marker 기본 테스트" },
+    { path: ROUTES.MAP_MARKER_CUSTOM, title: "Marker 커스텀 테스트" },
   ];
 
   const handleMenuClick = (path) => {
