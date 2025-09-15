@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ROUTES } from "@/constants/routes";
 import Header from "@/components/Header";
 import MainPage from "@/pages/MainPage";
+import OverviewPage from "@/pages/OverviewPage";
+import IntegrationPage from "@/pages/IntegrationPage";
 import MapBasicPage from "@/pages/map/MapBasicPage";
 import MapMarkerPage from "@/pages/map/MapMarkerPage";
 import MapMarkerCustomPage from "@/pages/map/MapMarkerCustomPage";
@@ -26,6 +28,10 @@ function App() {
             <Routes>
               {/* 메인 페이지 */}
               <Route path={ROUTES.HOME} element={<MainPage />} />
+              {/* 개요 페이지 */}
+              <Route path={ROUTES.OVERVIEW} element={<OverviewPage />} />
+              {/* 연동 방법 페이지 */}
+              <Route path={ROUTES.INTEGRATION} element={<IntegrationPage />} />
               {/* 기본 맵 테스트 */}
               <Route path={ROUTES.MAP_BASIC} element={<MapBasicPage />} />
               {/* 마커 테스트 */}

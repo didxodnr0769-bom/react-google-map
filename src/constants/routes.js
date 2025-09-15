@@ -1,6 +1,8 @@
 // URL 라우트 상수 정의
 export const ROUTES = {
   HOME: "/",
+  OVERVIEW: "/overview",
+  INTEGRATION: "/integration",
   MAP_BASIC: "/map-basic",
   MAP_MARKER: "/map-marker",
   MAP_MARKER_CUSTOM: "/map-marker-custom",
@@ -11,6 +13,18 @@ export const ROUTES = {
 
 // 페이지 정보 상수
 export const PAGE_INFO = {
+  [ROUTES.HOME]: {
+    title: "홈",
+    description: "메인 페이지",
+  },
+  [ROUTES.OVERVIEW]: {
+    title: "개요",
+    description: "프로젝트 개요",
+  },
+  [ROUTES.INTEGRATION]: {
+    title: "연동 방법",
+    description: "Google Maps API 연동 방법",
+  },
   [ROUTES.MAP_BASIC]: {
     title: "Map 기본 테스트",
     description: "기본적인 Google Map 표시 테스트",

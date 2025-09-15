@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main-content {
@@ -9,6 +10,7 @@
   padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
   width: 100%;
   max-width: 100%;
+  transition: margin-left 0.3s ease;
 }
 
 .logo {
