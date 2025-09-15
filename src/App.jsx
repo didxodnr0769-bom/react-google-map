@@ -5,13 +5,13 @@ import Header from "@/components/Header";
 import MainPage from "@/pages/MainPage";
 import OverviewPage from "@/pages/OverviewPage";
 import IntegrationPage from "@/pages/IntegrationPage";
-import MapBasicPage from "@/pages/map/MapBasicPage";
-import MapMarkerPage from "@/pages/map/MapMarkerPage";
 import MapMarkerCustomPage from "@/pages/map/MapMarkerCustomPage";
 import MapLocationPage from "@/pages/map/MapLocationPage";
 import { LoadScript } from "@react-google-maps/api";
 import MapControlPage from "@/pages/map/MapControlPage";
 import MapDirectionsPage from "@/pages/map/MapDirectionsPage";
+import BasicTestPage from "@/pages/test/basic/BasicTestPage";
+import BasicMarkerTestPage from "@/pages/test/basic/BasicMarkerTestPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -33,9 +33,12 @@ function App() {
               {/* 연동 방법 페이지 */}
               <Route path={ROUTES.INTEGRATION} element={<IntegrationPage />} />
               {/* 기본 맵 테스트 */}
-              <Route path={ROUTES.MAP_BASIC} element={<MapBasicPage />} />
+              <Route path={ROUTES.MAP_BASIC} element={<BasicTestPage />} />
               {/* 마커 테스트 */}
-              <Route path={ROUTES.MAP_MARKER} element={<MapMarkerPage />} />
+              <Route
+                path={ROUTES.MAP_MARKER}
+                element={<BasicMarkerTestPage />}
+              />
               {/* 커스텀 마커 테스트 */}
               <Route
                 path={ROUTES.MAP_MARKER_CUSTOM}
