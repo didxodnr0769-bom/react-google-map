@@ -11,6 +11,7 @@
   width: 100%;
   max-width: 100%;
   transition: margin-left 0.3s ease;
+  padding: 20px;
 }
 
 .logo {
