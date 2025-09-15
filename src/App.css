@@ -7,9 +7,7 @@
 
 .main-content {
   flex: 1;
-  padding: 20px;
-
-  padding-top: 100px; /* 헤더 높이만큼 여백 추가 */
+  padding-top: 50px; /* 헤더 높이만큼 여백 추가 */
   width: 100%;
   max-width: 100%;
   transition: margin-left 0.3s ease;

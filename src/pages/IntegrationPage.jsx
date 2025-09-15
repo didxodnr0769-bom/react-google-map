@@ -11,7 +11,7 @@ const IntegrationPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="map-page">
       <MarkdownComponent content={markdown} />
     </div>
   );

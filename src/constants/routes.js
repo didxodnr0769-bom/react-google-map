@@ -11,6 +11,36 @@ export const ROUTES = {
   MAP_DIRECTIONS: "/map-directions",
 };
 
+// 메뉴 그룹 구조 정의
+export const MENU_GROUPS = [
+  {
+    id: "overview",
+    title: "개요",
+    items: [
+      { path: ROUTES.OVERVIEW, title: "개요" },
+      { path: ROUTES.INTEGRATION, title: "연동 방법" },
+    ],
+  },
+  {
+    id: "map",
+    title: "맵",
+    items: [
+      { path: ROUTES.MAP_BASIC, title: "맵 기본 테스트" },
+      { path: ROUTES.MAP_LOCATION, title: "현재 위치 표시" },
+      { path: ROUTES.MAP_CONTROL, title: "맵 컨트롤" },
+      { path: ROUTES.MAP_DIRECTIONS, title: "경로 표출" },
+    ],
+  },
+  {
+    id: "marker",
+    title: "마커",
+    items: [
+      { path: ROUTES.MAP_MARKER, title: "마커 기본 테스트" },
+      { path: ROUTES.MAP_MARKER_CUSTOM, title: "마커 커스텀 테스트" },
+    ],
+  },
+];
+
 // 페이지 정보 상수
 export const PAGE_INFO = {
   [ROUTES.HOME]: {

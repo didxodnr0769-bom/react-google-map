@@ -28,18 +28,13 @@ const MapMarkerCustomPage = () => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    fetch(`/docs/기본_마커_변경_테스트.md`)
+    fetch(`/docs/기본_마커_테스트.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);
 
   return (
     <div className="map-page">
-      <div className="map-page-header">
-        <h1>Map 마커 테스트</h1>
-        <p>다양한 마커와 정보창을 사용한 Google Map 테스트 페이지입니다.</p>
-      </div>
-
       <div className="map-container">
         <GoogleMap mapContainerClassName="map-inner" center={center} zoom={13}>
           {customMarkers.map((marker) => (

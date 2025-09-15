@@ -12,7 +12,11 @@ const OverviewPage = () => {
       .then((text) => setMarkdown(text));
   }, []);
 
-  return <MarkdownComponent content={markdown} />;
+  return (
+    <div className="map-page">
+      <MarkdownComponent content={markdown} />
+    </div>
+  );
 };
 
 export default OverviewPage;

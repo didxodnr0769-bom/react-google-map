@@ -58,11 +58,6 @@ const CustomMarkerTestPage = () => {
 
   return (
     <div className="map-page">
-      <div className="map-page-header">
-        <h1>Map 커스텀 마커 테스트</h1>
-        <p>다양한 커스텀 마커와 테스트 페이지입니다.</p>
-      </div>
-
       <div className="map-container">
         <GoogleMap
           mapContainerClassName="map-inner"

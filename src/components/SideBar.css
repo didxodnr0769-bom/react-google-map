@@ -89,15 +89,77 @@
   margin: 0;
 }
 
-.nav-item {
+/* 메뉴 그룹 스타일 */
+.menu-group {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-group:last-child {
+  border-bottom: none;
+}
+
+/* 그룹 헤더 */
+.group-header {
   width: 100%;
   padding: 15px 20px;
+  border: none;
+  background: #f8f9fa;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid transparent;
+}
+
+.group-header:hover {
+  background: #e9ecef;
+  color: #007bff;
+  border-left-color: #007bff;
+}
+
+.group-title {
+  flex: 1;
+}
+
+.group-arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+  color: #666;
+}
+
+.group-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* 그룹 아이템들 */
+.group-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #fff;
+}
+
+.group-items.open {
+  max-height: 500px; /* 충분한 높이로 설정 */
+}
+
+.nav-item {
+  width: 100%;
+  padding: 12px 20px 12px 40px; /* 들여쓰기 추가 */
   border: none;
   background: none;
   text-align: left;
   cursor: pointer;
-  font-size: 16px;
-  color: #333;
+  font-size: 14px;
+  color: #555;
   transition: all 0.2s ease;
   border-left: 4px solid transparent;
 }
