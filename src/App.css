@@ -3,14 +3,37 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  overflow-x: hidden; /* 가로 스크롤바 방지 */
 }
 
 .main-content {
   flex: 1;
-  padding-top: 50px; /* 헤더 높이만큼 여백 추가 */
+  padding-top: 70px; /* 헤더 높이만큼 여백 추가 */
   width: 100%;
   max-width: 100%;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  box-sizing: border-box;
+}
+
+.main-content.sidebar-open {
+  margin-left: 300px; /* 사이드바 너비만큼 밀어내기 */
+  width: calc(100% - 300px); /* 사이드바 너비만큼 가로 폭 줄이기 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .main-content.sidebar-open {
+    margin-left: 280px; /* 모바일에서 사이드바 너비에 맞춰 밀어내기 */
+    width: calc(100% - 280px); /* 모바일에서 사이드바 너비에 맞춰 조정 */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content.sidebar-open {
+    margin-left: 0; /* 모바일에서는 사이드바가 전체 화면을 덮음 */
+    width: 100%; /* 모바일에서는 사이드바가 전체 화면을 덮음 */
+  }
 }
 
 .logo {

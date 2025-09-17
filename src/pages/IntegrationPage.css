@@ -14,7 +14,7 @@
 .integration-page h1 {
   color: #333;
   margin-bottom: 30px;
-  font-size: 2.5rem;
+  font-size: 2rem; /* 2.5rem -> 2rem (20% 감소) */
   text-align: center;
   border-bottom: 3px solid #28a745;
   padding-bottom: 15px;
@@ -27,7 +27,7 @@
 .section h2 {
   color: #28a745;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.4rem; /* 1.8rem -> 1.4rem (20% 감소) */
   border-left: 4px solid #28a745;
   padding-left: 15px;
 }
@@ -43,7 +43,7 @@
 .step h3 {
   color: #495057;
   margin-bottom: 15px;
-  font-size: 1.3rem;
+  font-size: 1rem; /* 1.3rem -> 1rem (20% 감소) */
 }
 
 .step ol,
@@ -56,6 +56,7 @@
   margin: 8px 0;
   line-height: 1.6;
   color: #555;
+  font-size: 0.9rem; /* 기본 폰트 사이즈 20% 감소 */
 }
 
 .step ul {
@@ -75,7 +76,7 @@
   margin: 0;
   color: #e2e8f0;
   font-family: "Courier New", monospace;
-  font-size: 14px;
+  font-size: 11px; /* 14px -> 11px (20% 감소) */
   line-height: 1.6;
   white-space: pre-wrap;
 }
@@ -86,7 +87,7 @@
   padding: 2px 6px;
   border-radius: 4px;
   font-family: "Courier New", monospace;
-  font-size: 0.9em;
+  font-size: 0.7em; /* 0.9em -> 0.7em (20% 감소) */
 }
 
 .warning-box {
@@ -100,7 +101,7 @@
 .warning-box h3 {
   color: #856404;
   margin-bottom: 15px;
-  font-size: 1.2rem;
+  font-size: 1rem; /* 1.2rem -> 1rem (20% 감소) */
 }
 
 .warning-box ul {
@@ -112,6 +113,7 @@
   color: #856404;
   margin: 8px 0;
   line-height: 1.6;
+  font-size: 0.9rem; /* 기본 폰트 사이즈 20% 감소 */
 }
 
 .info-box {

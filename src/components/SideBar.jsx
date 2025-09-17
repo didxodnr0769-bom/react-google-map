@@ -10,7 +10,10 @@ const SideBar = ({ isOpen, onClose }) => {
 
   const handleMenuClick = (path) => {
     navigate(path);
-    onClose();
+    // 모바일에서는 아이템 선택 시 사이드바 닫기
+    if (window.innerWidth <= 768) {
+      onClose();
+    }
   };
 
   const toggleGroup = (groupId) => {
@@ -27,9 +30,6 @@ const SideBar = ({ isOpen, onClose }) => {
 
   return (
     <>
-      {/* 오버레이 */}
-      {isOpen && <div className="sidebar-overlay" onClick={onClose} />}
-
       {/* 사이드바 */}
       <aside className={`sidebar ${isOpen ? "open" : ""}`}>
         <div className="sidebar-header">

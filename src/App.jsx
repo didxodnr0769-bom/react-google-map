@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "@/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ROUTES } from "@/constants/routes";
@@ -16,6 +17,15 @@ import CustomMarkerTestPage from "@/pages/test/basic/CustomMarkerTestPage";
 const libraries = ["places", "drawing", "geometry"];
 
 function App() {
+  // 모바일에서는 기본적으로 사이드바 닫힘, 데스크톱에서는 열림
+  const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
+    return window.innerWidth > 768; // 768px 이상에서는 열림, 이하는 닫힘
+  });
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
   return (
     <Router>
       <LoadScript
@@ -23,8 +33,10 @@ function App() {
         libraries={libraries}
       >
         <div className="app">
-          <Header />
-          <main className="main-content">
+          <Header isOpen={isSidebarOpen} onToggleSidebar={toggleSidebar} />
+          <main
+            className={`main-content ${isSidebarOpen ? "sidebar-open" : ""}`}
+          >
             <Routes>
               {/* 메인 페이지 */}
               <Route path={ROUTES.HOME} element={<MainPage />} />

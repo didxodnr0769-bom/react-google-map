@@ -14,7 +14,7 @@
 .overview-page h1 {
   color: #333;
   margin-bottom: 30px;
-  font-size: 2.5rem;
+  font-size: 2rem; /* 2.5rem -> 2rem (20% 감소) */
   text-align: center;
   border-bottom: 3px solid #007bff;
   padding-bottom: 15px;
@@ -27,7 +27,7 @@
 .section h2 {
   color: #007bff;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.4rem; /* 1.8rem -> 1.4rem (20% 감소) */
   border-left: 4px solid #007bff;
   padding-left: 15px;
 }
@@ -35,7 +35,7 @@
 .section p {
   line-height: 1.8;
   color: #555;
-  font-size: 1.1rem;
+  font-size: 0.9rem; /* 1.1rem -> 0.9rem (20% 감소) */
   margin-bottom: 15px;
 }
 
@@ -51,7 +51,7 @@
   border-radius: 8px;
   border-left: 4px solid #28a745;
   color: #333;
-  font-size: 1.1rem;
+  font-size: 0.9rem; /* 1.1rem -> 0.9rem (20% 감소) */
   transition: all 0.2s ease;
 }
 
@@ -84,7 +84,7 @@
   color: #007bff;
   display: block;
   margin-bottom: 8px;
-  font-size: 1.1rem;
+  font-size: 0.9rem; /* 1.1rem -> 0.9rem (20% 감소) */
 }
 
 .project-structure {
@@ -98,7 +98,7 @@
 .project-structure pre {
   margin: 0;
   font-family: "Courier New", monospace;
-  font-size: 14px;
+  font-size: 11px; /* 14px -> 11px (20% 감소) */
   line-height: 1.6;
   color: #333;
   white-space: pre-wrap;
@@ -114,11 +114,11 @@
   }
 
   .overview-page h1 {
-    font-size: 2rem;
+    font-size: 1.6rem; /* 2rem -> 1.6rem (20% 감소) */
   }
 
   .section h2 {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* 1.5rem -> 1.2rem (20% 감소) */
   }
 
   .tech-stack {
