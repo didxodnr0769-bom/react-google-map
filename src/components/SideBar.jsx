@@ -6,7 +6,9 @@ import "@/components/SideBar.css";
 const SideBar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [openGroups, setOpenGroups] = useState(new Set());
+  const [openGroups, setOpenGroups] = useState(
+    new Set(MENU_GROUPS.map((group) => group.id)),
+  );
 
   const handleMenuClick = (path) => {
     navigate(path);
