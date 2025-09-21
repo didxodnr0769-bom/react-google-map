@@ -11,6 +11,7 @@ import MapDirectionsPage from "@/pages/map/MapDirectionsPage";
 import BasicTestPage from "@/pages/test/basic/BasicTestPage";
 import MapMarkerPage from "@/pages/marker/MapMarkerPage";
 import MapMarkerCustomPage from "@/pages/marker/MapMarkerCustomPage";
+import OverlayBasicPage from "@/pages/overlay/OverlayBasicPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -55,6 +56,11 @@ function App() {
               <Route
                 path={ROUTES.MAP_DIRECTIONS}
                 element={<MapDirectionsPage />}
+              />
+              {/* 오버레이 테스트 */}
+              <Route
+                path={ROUTES.OVERLAY_BASIC}
+                element={<OverlayBasicPage />}
               />
             </Routes>
           </main>

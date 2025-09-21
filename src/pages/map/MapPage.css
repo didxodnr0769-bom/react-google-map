@@ -93,3 +93,97 @@
 .markdown-container {
   margin-top: 25px;
 }
+
+/* 마크다운 섹션 스타일 */
+.markdown-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+
+  @media (min-width: 1024px) {
+    margin-top: 40px;
+    padding: 30px;
+  }
+}
+
+.markdown-section h1 {
+  color: #1a202c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #667eea;
+
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
+}
+
+.markdown-section h2 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #e2e8f0;
+
+  @media (min-width: 1024px) {
+    font-size: 1.75rem;
+  }
+}
+
+.markdown-section h3 {
+  color: #4a5568;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.75rem 0;
+
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+}
+
+.markdown-section p {
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+.markdown-section code {
+  background-color: #f7fafc;
+  color: #e53e3e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 0.875rem;
+}
+
+.markdown-section pre {
+  background-color: #2d3748;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.markdown-section pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.markdown-section ul,
+.markdown-section ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown-section li {
+  margin: 0.5rem 0;
+  color: #4a5568;
+}

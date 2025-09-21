@@ -8,10 +8,12 @@ export const ROUTES = {
   MARKER_CUSTOM: "/marker/custom",
   MAP_CONTROL: "/map-control",
   MAP_DIRECTIONS: "/map-directions",
+  OVERLAY_BASIC: "/overlay/basic",
 };
 
 // 메뉴 그룹 구조 정의
 export const MENU_GROUPS = [
+  // 개요
   {
     id: "overview",
     title: "개요",
@@ -20,6 +22,7 @@ export const MENU_GROUPS = [
       { path: ROUTES.INTEGRATION, title: "연동 방법" },
     ],
   },
+  // 맵
   {
     id: "map",
     title: "맵",
@@ -29,6 +32,7 @@ export const MENU_GROUPS = [
       { path: ROUTES.MAP_DIRECTIONS, title: "경로 표출" },
     ],
   },
+  // 마커
   {
     id: "marker",
     title: "마커",
@@ -36,6 +40,12 @@ export const MENU_GROUPS = [
       { path: ROUTES.MARKER_BASIC, title: "마커 기본 테스트" },
       { path: ROUTES.MARKER_CUSTOM, title: "마커 커스텀 테스트" },
     ],
+  },
+  // 오버레이
+  {
+    id: "overlay",
+    title: "오버레이",
+    items: [{ path: ROUTES.OVERLAY_BASIC, title: "오버레이 기본 테스트" }],
   },
 ];
 
@@ -68,5 +78,9 @@ export const PAGE_INFO = {
   [ROUTES.MAP_DIRECTIONS]: {
     title: "Map 경로 표출 테스트",
     description: "Directions API를 이용한 경로 표시 및 길찾기 테스트",
+  },
+  [ROUTES.OVERLAY_BASIC]: {
+    title: "오버레이 기본 테스트",
+    description: "오버레이 기본 테스트",
   },
 };
