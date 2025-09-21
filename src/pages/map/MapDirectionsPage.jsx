@@ -4,6 +4,8 @@ import {
   DirectionsRenderer,
   useJsApiLoader,
 } from "@react-google-maps/api";
+import MarkdownComponent from "@/components/Markdown";
+import "@/pages/map/MapPage.css";
 
 const containerStyle = {
   width: "100%",
@@ -20,6 +22,7 @@ const libraries = ["places", "directions"];
 const MapDirectionsPage = () => {
   const [response, setResponse] = useState(null);
   const [isCalculating, setIsCalculating] = useState(false);
+  const [markdown, setMarkdown] = useState("");
   const hasSearched = useRef(false);
 
   // Google Maps API 로드
@@ -74,6 +77,13 @@ const MapDirectionsPage = () => {
     tryRequest(0);
   }, [isLoaded, isCalculating]);
 
+  // 마크다운 문서 로드
+  useEffect(() => {
+    fetch(`/docs/맵_컨트롤.md`)
+      .then((response) => response.text())
+      .then((text) => setMarkdown(text));
+  }, []);
+
   // 초기 로드 시 한 번만 검색
   useEffect(() => {
     if (isLoaded && !hasSearched.current) {
@@ -93,7 +103,7 @@ const MapDirectionsPage = () => {
   }
 
   return (
-    <div>
+    <div className="map-page">
       <div style={{ marginBottom: "10px" }}>
         <h3>대중교통 경로 검색 (서울역 → 모란역)</h3>
         <p style={{ fontSize: "14px", color: "#666", marginBottom: "10px" }}>
@@ -112,17 +122,23 @@ const MapDirectionsPage = () => {
         )}
       </div>
 
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={7}>
-        {response && (
-          <DirectionsRenderer
-            directions={response}
-            options={{
-              suppressMarkers: false,
-              suppressInfoWindows: false,
-            }}
-          />
-        )}
-      </GoogleMap>
+      <div className="map-container">
+        <GoogleMap mapContainerClassName="map-inner" center={center} zoom={7}>
+          {response && (
+            <DirectionsRenderer
+              directions={response}
+              options={{
+                suppressMarkers: false,
+                suppressInfoWindows: false,
+              }}
+            />
+          )}
+        </GoogleMap>
+      </div>
+
+      <div className="markdown-section">
+        <MarkdownComponent content={markdown} />
+      </div>
     </div>
   );
 };

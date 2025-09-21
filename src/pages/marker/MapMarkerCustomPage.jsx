@@ -66,7 +66,7 @@ const MapMarkerCustomPage = () => {
         </GoogleMap>
       </div>
 
-      <div className="markdown-container">
+      <div className="markdown-section">
         <MarkdownComponent content={markdown} />
       </div>
     </div>

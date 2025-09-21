@@ -14,7 +14,9 @@ const OverviewPage = () => {
 
   return (
     <div className="map-page">
-      <MarkdownComponent content={markdown} />
+      <div className="markdown-section">
+        <MarkdownComponent content={markdown} />
+      </div>
     </div>
   );
 };
