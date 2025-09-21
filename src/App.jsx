@@ -5,13 +5,12 @@ import { ROUTES } from "@/constants/routes";
 import Header from "@/components/Header";
 import OverviewPage from "@/pages/OverviewPage";
 import IntegrationPage from "@/pages/IntegrationPage";
-import MapLocationPage from "@/pages/map/MapLocationPage";
 import { LoadScript } from "@react-google-maps/api";
 import MapControlPage from "@/pages/map/MapControlPage";
 import MapDirectionsPage from "@/pages/map/MapDirectionsPage";
 import BasicTestPage from "@/pages/test/basic/BasicTestPage";
-import BasicMarkerTestPage from "@/pages/test/basic/BasicMarkerTestPage";
-import CustomMarkerTestPage from "@/pages/test/basic/CustomMarkerTestPage";
+import MapMarkerPage from "@/pages/marker/MapMarkerPage";
+import MapMarkerCustomPage from "@/pages/marker/MapMarkerCustomPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -44,17 +43,12 @@ function App() {
               {/* 기본 맵 테스트 */}
               <Route path={ROUTES.MAP_BASIC} element={<BasicTestPage />} />
               {/* 마커 테스트 */}
-              <Route
-                path={ROUTES.MAP_MARKER}
-                element={<BasicMarkerTestPage />}
-              />
+              <Route path={ROUTES.MARKER_BASIC} element={<MapMarkerPage />} />
               {/* 커스텀 마커 테스트 */}
               <Route
-                path={ROUTES.MAP_MARKER_CUSTOM}
-                element={<CustomMarkerTestPage />}
+                path={ROUTES.MARKER_CUSTOM}
+                element={<MapMarkerCustomPage />}
               />
-              {/* 위치 테스트 */}
-              <Route path={ROUTES.MAP_LOCATION} element={<MapLocationPage />} />
               {/* 컨트롤 테스트 */}
               <Route path={ROUTES.MAP_CONTROL} element={<MapControlPage />} />
               {/* 경로 표출 테스트 */}

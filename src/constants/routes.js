@@ -4,9 +4,8 @@ export const ROUTES = {
   HOME: "/",
   INTEGRATION: "/integration",
   MAP_BASIC: "/map-basic",
-  MAP_MARKER: "/map-marker",
-  MAP_MARKER_CUSTOM: "/map-marker-custom",
-  MAP_LOCATION: "/map-location",
+  MARKER_BASIC: "/marker/basic",
+  MARKER_CUSTOM: "/marker/custom",
   MAP_CONTROL: "/map-control",
   MAP_DIRECTIONS: "/map-directions",
 };
@@ -26,7 +25,6 @@ export const MENU_GROUPS = [
     title: "맵",
     items: [
       { path: ROUTES.MAP_BASIC, title: "맵 기본 테스트" },
-      { path: ROUTES.MAP_LOCATION, title: "현재 위치 표시" },
       { path: ROUTES.MAP_CONTROL, title: "맵 컨트롤" },
       { path: ROUTES.MAP_DIRECTIONS, title: "경로 표출" },
     ],
@@ -35,8 +33,8 @@ export const MENU_GROUPS = [
     id: "marker",
     title: "마커",
     items: [
-      { path: ROUTES.MAP_MARKER, title: "마커 기본 테스트" },
-      { path: ROUTES.MAP_MARKER_CUSTOM, title: "마커 커스텀 테스트" },
+      { path: ROUTES.MARKER_BASIC, title: "마커 기본 테스트" },
+      { path: ROUTES.MARKER_CUSTOM, title: "마커 커스텀 테스트" },
     ],
   },
 ];
@@ -55,17 +53,13 @@ export const PAGE_INFO = {
     title: "Map 기본 테스트",
     description: "기본적인 Google Map 표시 테스트",
   },
-  [ROUTES.MAP_MARKER]: {
-    title: "Map Marker 테스트",
+  [ROUTES.MARKER_BASIC]: {
+    title: "Marker 기본 테스트",
     description: "기본 마커를 이용한 Map 테스트",
   },
-  [ROUTES.MAP_MARKER_CUSTOM]: {
-    title: "Map 커스텀 마커 테스트",
+  [ROUTES.MARKER_CUSTOM]: {
+    title: "Marker 커스텀 테스트",
     description: "커스텀 마커와 정보창을 이용한 고급 Map 테스트",
-  },
-  [ROUTES.MAP_LOCATION]: {
-    title: "Map 현재 위치 표시 테스트",
-    description: "사용자의 현재 위치를 표시하는 Map 테스트",
   },
   [ROUTES.MAP_CONTROL]: {
     title: "Map 컨트롤 테스트",
