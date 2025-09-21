@@ -1,7 +1,7 @@
 // URL 라우트 상수 정의
 export const ROUTES = {
+  // 개요
   HOME: "/",
-  OVERVIEW: "/overview",
   INTEGRATION: "/integration",
   MAP_BASIC: "/map-basic",
   MAP_MARKER: "/map-marker",
@@ -17,7 +17,7 @@ export const MENU_GROUPS = [
     id: "overview",
     title: "개요",
     items: [
-      { path: ROUTES.OVERVIEW, title: "개요" },
+      { path: ROUTES.HOME, title: "개요" },
       { path: ROUTES.INTEGRATION, title: "연동 방법" },
     ],
   },
@@ -44,10 +44,6 @@ export const MENU_GROUPS = [
 // 페이지 정보 상수
 export const PAGE_INFO = {
   [ROUTES.HOME]: {
-    title: "홈",
-    description: "메인 페이지",
-  },
-  [ROUTES.OVERVIEW]: {
     title: "개요",
     description: "프로젝트 개요",
   },
