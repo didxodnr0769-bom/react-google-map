@@ -1,13 +1,8 @@
-import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { ROUTES } from "@/constants/routes";
+// src/pages/marker/MapMarkerCustomPage.jsx
+import { GoogleMap, Marker } from "@react-google-maps/api";
+import { useState, useEffect } from "react";
 import "@/pages/map/MapPage.css";
-
-const center = {
-  lat: 37.5665, // 서울의 위도
-  lng: 126.978, // 서울의 경도
-};
+import MarkdownComponent from "@/components/Markdown";
 
 // 커스텀 마커 데이터
 const customMarkers = [
@@ -17,7 +12,7 @@ const customMarkers = [
     title: "서울 중심지",
     description: "대한민국의 수도 서울의 중심부입니다.",
     icon: "🏢",
-    color: "#667eea",
+    color: "#669966",
   },
   {
     id: 2,
@@ -27,27 +22,16 @@ const customMarkers = [
     icon: "🏯",
     color: "#f093fb",
   },
-  {
-    id: 3,
-    position: { lat: 37.5663, lng: 126.9779 },
-    title: "명동",
-    description: "서울의 대표적인 쇼핑 거리입니다.",
-    icon: "🛍️",
-    color: "#4facfe",
-  },
-  {
-    id: 4,
-    position: { lat: 37.5547, lng: 126.9707 },
-    title: "N서울타워",
-    description: "서울의 랜드마크 타워입니다.",
-    icon: "🗼",
-    color: "#43e97b",
-  },
 ];
 
 const MapMarkerCustomPage = () => {
-  const [selectedMarker, setSelectedMarker] = useState(null);
-  const [mapCenter, setMapCenter] = useState(center);
+  const [markdown, setMarkdown] = useState("");
+
+  useEffect(() => {
+    fetch(`/docs/마커_커스텀_테스트.md`)
+      .then((response) => response.text())
+      .then((text) => setMarkdown(text));
+  }, []);
 
   // 커스텀 마커 아이콘 생성
   const createCustomIcon = (icon, color) => ({
@@ -62,96 +46,13 @@ const MapMarkerCustomPage = () => {
     anchor: new window.google.maps.Point(20, 50),
   });
 
-  const handleMarkerClick = (marker) => {
-    setSelectedMarker(marker);
-    setMapCenter(marker.position);
-  };
-
-  const handleInfoWindowClose = () => {
-    setSelectedMarker(null);
-  };
-
   return (
     <div className="map-page">
-      <div className="map-page-header">
-        <Link to={ROUTES.HOME} className="map-back-link">
-          ← 메인 페이지로 돌아가기
-        </Link>
-
-        <h1>Map 커스텀 마커 테스트</h1>
-        <p>
-          다양한 커스텀 마커와 정보창을 사용한 Google Map 테스트 페이지입니다.
-        </p>
-      </div>
-
-      <div
-        className="marker-info"
-        style={{
-          marginBottom: "20px",
-          padding: "15px",
-          backgroundColor: "#f8f9fa",
-          borderRadius: "10px",
-          border: "1px solid #e9ecef",
-        }}
-      >
-        <h3 style={{ marginBottom: "10px", color: "#333" }}>📍 마커 정보</h3>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: "10px",
-          }}
-        >
-          {customMarkers.map((marker) => (
-            <div
-              key={marker.id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "8px",
-                backgroundColor: "white",
-                borderRadius: "8px",
-                cursor: "pointer",
-                transition: "all 0.2s ease",
-                border:
-                  selectedMarker?.id === marker.id
-                    ? `2px solid ${marker.color}`
-                    : "1px solid #ddd",
-              }}
-              onClick={() => handleMarkerClick(marker)}
-              onMouseEnter={(e) => {
-                e.target.style.transform = "scale(1.02)";
-                e.target.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = "scale(1)";
-                e.target.style.boxShadow = "none";
-              }}
-            >
-              <span style={{ fontSize: "20px" }}>{marker.icon}</span>
-              <span style={{ fontSize: "14px", fontWeight: "500" }}>
-                {marker.title}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <div className="map-container">
         <GoogleMap
           mapContainerClassName="map-inner"
-          center={mapCenter}
-          zoom={13}
-          options={{
-            styles: [
-              {
-                featureType: "poi",
-                elementType: "labels",
-                stylers: [{ visibility: "off" }],
-              },
-            ],
-          }}
+          center={{ lat: 37.5665, lng: 126.978 }}
+          zoom={14}
         >
           {/* 커스텀 마커 */}
           {customMarkers.map((marker) => (
@@ -160,57 +61,13 @@ const MapMarkerCustomPage = () => {
               position={marker.position}
               title={marker.title}
               icon={createCustomIcon(marker.icon, marker.color)}
-              onClick={() => handleMarkerClick(marker)}
             />
           ))}
-
-          {/* 선택된 마커의 정보 창 */}
-          {selectedMarker && (
-            <InfoWindow
-              position={selectedMarker.position}
-              onCloseClick={handleInfoWindowClose}
-            >
-              <div
-                style={{
-                  padding: "10px",
-                  maxWidth: "200px",
-                }}
-              >
-                <h4
-                  style={{
-                    margin: "0 0 8px 0",
-                    color: selectedMarker.color,
-                    fontSize: "16px",
-                    fontWeight: "600",
-                  }}
-                >
-                  {selectedMarker.icon} {selectedMarker.title}
-                </h4>
-                <p
-                  style={{
-                    margin: "0",
-                    fontSize: "14px",
-                    lineHeight: "1.4",
-                    color: "#666",
-                  }}
-                >
-                  {selectedMarker.description}
-                </p>
-                <div
-                  style={{
-                    marginTop: "8px",
-                    fontSize: "12px",
-                    color: "#999",
-                  }}
-                >
-                  위도: {selectedMarker.position.lat.toFixed(4)}
-                  <br />
-                  경도: {selectedMarker.position.lng.toFixed(4)}
-                </div>
-              </div>
-            </InfoWindow>
-          )}
         </GoogleMap>
+      </div>
+
+      <div className="markdown-container">
+        <MarkdownComponent content={markdown} />
       </div>
     </div>
   );
