@@ -13,6 +13,7 @@ import MapMarkerPage from "@/pages/marker/MapMarkerPage";
 import CustomMarkerTestPage from "@/pages/marker/CustomMarkerTestPage";
 import OverlayBasicPage from "@/pages/overlay/OverlayBasicPage";
 import PollylineTestPage from "@/pages/overlay/PollylineTestPage";
+import PolygonTestPage from "@/pages/overlay/PolygonTestPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -67,6 +68,11 @@ function App() {
               <Route
                 path={ROUTES.OVERLAY_POLYLINE}
                 element={<PollylineTestPage />}
+              />
+              {/* 폴리곤 테스트 */}
+              <Route
+                path={ROUTES.OVERLAY_POLYGON}
+                element={<PolygonTestPage />}
               />
             </Routes>
           </main>
