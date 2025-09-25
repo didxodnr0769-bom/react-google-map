@@ -8,6 +8,7 @@ export const ROUTES = {
   MARKER_CUSTOM: "/marker/custom",
   MAP_CONTROL: "/map-control",
   MAP_DIRECTIONS: "/map-directions",
+  MAP_CURRENT_LOCATION: "/map-current-location",
   OVERLAY_BASIC: "/overlay/basic",
   OVERLAY_POLYLINE: "/overlay/polyline",
   OVERLAY_POLYGON: "/overlay/polygon",
@@ -31,6 +32,7 @@ export const MENU_GROUPS = [
     items: [
       { path: ROUTES.MAP_BASIC, title: "맵 기본 테스트" },
       { path: ROUTES.MAP_CONTROL, title: "맵 컨트롤" },
+      { path: ROUTES.MAP_CURRENT_LOCATION, title: "현재 위치 테스트" },
     ],
   },
   // 마커
@@ -83,6 +85,10 @@ export const PAGE_INFO = {
   [ROUTES.MAP_DIRECTIONS]: {
     title: "Map 경로 표출 테스트",
     description: "Directions API를 이용한 경로 표시 및 길찾기 테스트",
+  },
+  [ROUTES.MAP_CURRENT_LOCATION]: {
+    title: "현재 위치 테스트",
+    description: "Geolocation API를 이용한 현재 위치 표시 테스트",
   },
   [ROUTES.OVERLAY_BASIC]: {
     title: "오버레이 기본 테스트",

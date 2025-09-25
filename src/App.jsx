@@ -9,6 +9,7 @@ import { LoadScript } from "@react-google-maps/api";
 import MapControlPage from "@/pages/map/MapControlPage";
 import MapDirectionsPage from "@/pages/map/MapDirectionsPage";
 import BasicTestPage from "@/pages/map/BasicTestPage";
+import CurrentLocationTestPage from "@/pages/map/CurrentLocationTestPage";
 import MapMarkerPage from "@/pages/marker/MapMarkerPage";
 import CustomMarkerTestPage from "@/pages/marker/CustomMarkerTestPage";
 import OverlayBasicPage from "@/pages/overlay/OverlayBasicPage";
@@ -58,6 +59,11 @@ function App() {
               <Route
                 path={ROUTES.MAP_DIRECTIONS}
                 element={<MapDirectionsPage />}
+              />
+              {/* 현재 위치 테스트 */}
+              <Route
+                path={ROUTES.MAP_CURRENT_LOCATION}
+                element={<CurrentLocationTestPage />}
               />
               {/* 오버레이 테스트 */}
               <Route
