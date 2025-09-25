@@ -1,3 +1,4 @@
+// @src/pages/real/PathTrackingTestPage.jsx
 import { GoogleMap, Marker, Polyline } from "@react-google-maps/api";
 import "@/pages/map/MapPage.css";
 import MarkdownComponent from "@/components/Markdown";
@@ -35,7 +36,9 @@ const PathTrackingTestPage = () => {
     fetch(`/docs/실전기능/경로추적_테스트.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text))
-      .catch(() => setMarkdown("# 경로 추적 테스트\n\n문서를 로드할 수 없습니다."));
+      .catch(() =>
+        setMarkdown("# 경로 추적 테스트\n\n문서를 로드할 수 없습니다."),
+      );
 
     return () => {
       stopTracking();
@@ -64,7 +67,7 @@ const PathTrackingTestPage = () => {
           enableHighAccuracy: true,
           timeout: 5000,
           maximumAge: 0,
-        }
+        },
       );
     });
   };
@@ -117,7 +120,14 @@ const PathTrackingTestPage = () => {
   return (
     <div className="map-page">
       <div className="map-container">
-        <div className="controls" style={{ padding: "10px", backgroundColor: "#f5f5f5", marginBottom: "10px" }}>
+        <div
+          className="controls"
+          style={{
+            padding: "10px",
+            backgroundColor: "#f5f5f5",
+            marginBottom: "10px",
+          }}
+        >
           <button
             onClick={isTracking ? stopTracking : startTracking}
             style={{
@@ -151,7 +161,9 @@ const PathTrackingTestPage = () => {
             추적된 포인트: {path.length}개
           </span>
           {isTracking && (
-            <span style={{ marginLeft: "10px", color: "#4CAF50", fontSize: "14px" }}>
+            <span
+              style={{ marginLeft: "10px", color: "#4CAF50", fontSize: "14px" }}
+            >
               ● 실시간 추적 중
             </span>
           )}
@@ -174,14 +186,18 @@ const PathTrackingTestPage = () => {
               }}
             />
             {path.length > 1 && (
-              <Polyline
-                path={path}
-                options={polylineOptions}
-              />
+              <Polyline path={path} options={polylineOptions} />
             )}
           </GoogleMap>
         )}
-        {error && <div className="error-message" style={{ color: "red", padding: "10px" }}>{error}</div>}
+        {error && (
+          <div
+            className="error-message"
+            style={{ color: "red", padding: "10px" }}
+          >
+            {error}
+          </div>
+        )}
       </div>
 
       <div className="markdown-section">
