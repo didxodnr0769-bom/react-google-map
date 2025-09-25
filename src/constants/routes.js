@@ -12,6 +12,7 @@ export const ROUTES = {
   OVERLAY_BASIC: "/overlay/basic",
   OVERLAY_POLYLINE: "/overlay/polyline",
   OVERLAY_POLYGON: "/overlay/polygon",
+  REAL_PATH_TRACKING: "/real/path-tracking",
 };
 
 // 메뉴 그룹 구조 정의
@@ -52,6 +53,14 @@ export const MENU_GROUPS = [
       { path: ROUTES.OVERLAY_BASIC, title: "오버레이 기본 테스트" },
       { path: ROUTES.OVERLAY_POLYLINE, title: "폴리라인 테스트" },
       { path: ROUTES.OVERLAY_POLYGON, title: "폴리곤 테스트" },
+    ],
+  },
+  // 실전 기능
+  {
+    id: "real",
+    title: "실전 기능",
+    items: [
+      { path: ROUTES.REAL_PATH_TRACKING, title: "경로 추적 테스트" },
     ],
   },
 ];
@@ -101,5 +110,9 @@ export const PAGE_INFO = {
   [ROUTES.OVERLAY_POLYGON]: {
     title: "폴리곤 테스트",
     description: "Google Maps Polygon을 이용한 영역 그리기 테스트",
+  },
+  [ROUTES.REAL_PATH_TRACKING]: {
+    title: "경로 추적 테스트",
+    description: "현재 위치를 1초마다 조회하여 경로를 폴리라인으로 그리는 실시간 추적 테스트",
   },
 };

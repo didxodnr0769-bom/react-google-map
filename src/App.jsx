@@ -15,6 +15,7 @@ import CustomMarkerTestPage from "@/pages/marker/CustomMarkerTestPage";
 import OverlayBasicPage from "@/pages/overlay/OverlayBasicPage";
 import PollylineTestPage from "@/pages/overlay/PollylineTestPage";
 import PolygonTestPage from "@/pages/overlay/PolygonTestPage";
+import PathTrackingTestPage from "@/pages/real/PathTrackingTestPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -79,6 +80,11 @@ function App() {
               <Route
                 path={ROUTES.OVERLAY_POLYGON}
                 element={<PolygonTestPage />}
+              />
+              {/* 경로 추적 테스트 */}
+              <Route
+                path={ROUTES.REAL_PATH_TRACKING}
+                element={<PathTrackingTestPage />}
               />
             </Routes>
           </main>
