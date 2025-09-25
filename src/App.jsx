@@ -8,10 +8,11 @@ import IntegrationPage from "@/pages/IntegrationPage";
 import { LoadScript } from "@react-google-maps/api";
 import MapControlPage from "@/pages/map/MapControlPage";
 import MapDirectionsPage from "@/pages/map/MapDirectionsPage";
-import BasicTestPage from "@/pages/test/basic/BasicTestPage";
+import BasicTestPage from "@/pages/map/BasicTestPage";
 import MapMarkerPage from "@/pages/marker/MapMarkerPage";
-import MapMarkerCustomPage from "@/pages/marker/MapMarkerCustomPage";
+import CustomMarkerTestPage from "@/pages/marker/CustomMarkerTestPage";
 import OverlayBasicPage from "@/pages/overlay/OverlayBasicPage";
+import PollylineTestPage from "@/pages/overlay/PollylineTestPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -48,7 +49,7 @@ function App() {
               {/* 커스텀 마커 테스트 */}
               <Route
                 path={ROUTES.MARKER_CUSTOM}
-                element={<MapMarkerCustomPage />}
+                element={<CustomMarkerTestPage />}
               />
               {/* 컨트롤 테스트 */}
               <Route path={ROUTES.MAP_CONTROL} element={<MapControlPage />} />
@@ -61,6 +62,11 @@ function App() {
               <Route
                 path={ROUTES.OVERLAY_BASIC}
                 element={<OverlayBasicPage />}
+              />
+              {/* 폴리라인 테스트 */}
+              <Route
+                path={ROUTES.OVERLAY_POLYLINE}
+                element={<PollylineTestPage />}
               />
             </Routes>
           </main>

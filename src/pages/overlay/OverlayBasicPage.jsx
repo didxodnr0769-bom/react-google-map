@@ -31,6 +31,23 @@ const customMarkers = [
   },
 ];
 
+const mapOptions = {
+  gestureHandling: "greedy",
+
+  // map UI 숨김 처리
+  zoomControl: false,
+  scaleControl: false,
+  mapTypeControl: false,
+  streetViewControl: false,
+  fullscreenControl: false,
+  disableDefaultUI: true,
+
+  // 상호작용 처리
+  scrollwheel: true,
+  draggable: true,
+  clickableIcons: false,
+};
+
 /**
  * 오버레이 기본 테스트 페이지입니다.
  *  - 마커를 클릭시 정보 창이 표시됩니다.
@@ -63,15 +80,7 @@ const OverlayBasicPage = () => {
           mapContainerClassName="map-inner"
           center={mapCenter}
           zoom={13}
-          options={{
-            styles: [
-              {
-                featureType: "poi",
-                elementType: "labels",
-                stylers: [{ visibility: "off" }],
-              },
-            ],
-          }}
+          options={mapOptions}
         >
           {/* 커스텀 마커 */}
           {customMarkers.map((marker) => (

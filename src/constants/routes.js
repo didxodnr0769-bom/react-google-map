@@ -9,6 +9,7 @@ export const ROUTES = {
   MAP_CONTROL: "/map-control",
   MAP_DIRECTIONS: "/map-directions",
   OVERLAY_BASIC: "/overlay/basic",
+  OVERLAY_POLYLINE: "/overlay/polyline",
 };
 
 // 메뉴 그룹 구조 정의
@@ -29,7 +30,6 @@ export const MENU_GROUPS = [
     items: [
       { path: ROUTES.MAP_BASIC, title: "맵 기본 테스트" },
       { path: ROUTES.MAP_CONTROL, title: "맵 컨트롤" },
-      { path: ROUTES.MAP_DIRECTIONS, title: "경로 표출" },
     ],
   },
   // 마커
@@ -45,7 +45,10 @@ export const MENU_GROUPS = [
   {
     id: "overlay",
     title: "오버레이",
-    items: [{ path: ROUTES.OVERLAY_BASIC, title: "오버레이 기본 테스트" }],
+    items: [
+      { path: ROUTES.OVERLAY_BASIC, title: "오버레이 기본 테스트" },
+      { path: ROUTES.OVERLAY_POLYLINE, title: "폴리라인 테스트" },
+    ],
   },
 ];
 
@@ -82,5 +85,9 @@ export const PAGE_INFO = {
   [ROUTES.OVERLAY_BASIC]: {
     title: "오버레이 기본 테스트",
     description: "오버레이 기본 테스트",
+  },
+  [ROUTES.OVERLAY_POLYLINE]: {
+    title: "폴리라인 테스트",
+    description: "Google Maps Polyline을 이용한 선 그리기 테스트",
   },
 };
