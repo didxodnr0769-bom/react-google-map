@@ -8,6 +8,23 @@ const CurrentLocationTestPage = () => {
   const [currentPosition, setCurrentPosition] = useState(null);
   const [error, setError] = useState(null);
 
+  const mapOptions = {
+    gestureHandling: "greedy",
+
+    // map UI 숨김 처리
+    zoomControl: false,
+    scaleControl: false,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: false,
+    disableDefaultUI: true,
+
+    // 상호작용 처리
+    scrollwheel: true,
+    draggable: true,
+    clickableIcons: false,
+  };
+
   useEffect(() => {
     fetch(`/docs/맵/현재위치_테스트.md`)
       .then((response) => response.text())
@@ -48,6 +65,7 @@ const CurrentLocationTestPage = () => {
             mapContainerClassName="map-inner"
             center={currentPosition}
             zoom={15}
+            options={mapOptions}
           >
             <Marker position={currentPosition} title="현재 위치" />
           </GoogleMap>
