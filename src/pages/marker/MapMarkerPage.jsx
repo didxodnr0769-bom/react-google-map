@@ -28,7 +28,7 @@ const MapMarkerPage = () => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    fetch(`/docs/기본_마커_테스트.md`)
+    fetch(`/docs/마커/기본_마커_테스트.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);

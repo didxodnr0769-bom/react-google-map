@@ -34,7 +34,7 @@ const CustomMarkerTestPage = () => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    fetch(`/docs/마커_커스텀_테스트.md`)
+    fetch(`/docs/마커/마커_커스텀_테스트.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);

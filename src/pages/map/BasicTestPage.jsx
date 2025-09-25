@@ -12,7 +12,7 @@ const BasicTestPage = () => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    fetch(`/docs/기본_테스트.md`)
+    fetch(`/docs/맵/기본_테스트.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);

@@ -79,7 +79,7 @@ const MapDirectionsPage = () => {
 
   // 마크다운 문서 로드
   useEffect(() => {
-    fetch(`/docs/맵_컨트롤.md`)
+    fetch(`/docs/맵/맵_컨트롤.md`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, []);
