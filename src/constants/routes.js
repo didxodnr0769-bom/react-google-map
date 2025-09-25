@@ -13,6 +13,7 @@ export const ROUTES = {
   OVERLAY_POLYLINE: "/overlay/polyline",
   OVERLAY_POLYGON: "/overlay/polygon",
   REAL_PATH_TRACKING: "/real/path-tracking",
+  REAL_COORDINATE_SELECTION: "/real/coordinate-selection",
 };
 
 // 메뉴 그룹 구조 정의
@@ -61,6 +62,7 @@ export const MENU_GROUPS = [
     title: "실전 기능",
     items: [
       { path: ROUTES.REAL_PATH_TRACKING, title: "경로 추적 테스트" },
+      { path: ROUTES.REAL_COORDINATE_SELECTION, title: "영역 제한 테스트" },
     ],
   },
 ];
@@ -114,5 +116,9 @@ export const PAGE_INFO = {
   [ROUTES.REAL_PATH_TRACKING]: {
     title: "경로 추적 테스트",
     description: "현재 위치를 1초마다 조회하여 경로를 폴리라인으로 그리는 실시간 추적 테스트",
+  },
+  [ROUTES.REAL_COORDINATE_SELECTION]: {
+    title: "영역 제한 테스트",
+    description: "맵에서 특정 좌표를 선택하고 슬라이더로 반경을 조정하여 동적 원형 영역을 표출하는 테스트",
   },
 };

@@ -16,6 +16,7 @@ import OverlayBasicPage from "@/pages/overlay/OverlayBasicPage";
 import PollylineTestPage from "@/pages/overlay/PollylineTestPage";
 import PolygonTestPage from "@/pages/overlay/PolygonTestPage";
 import PathTrackingTestPage from "@/pages/real/PathTrackingTestPage";
+import CoordinateSelectionTestPage from "@/pages/real/CoordinateSelectionTestPage";
 
 const libraries = ["places", "drawing", "geometry"];
 
@@ -85,6 +86,11 @@ function App() {
               <Route
                 path={ROUTES.REAL_PATH_TRACKING}
                 element={<PathTrackingTestPage />}
+              />
+              {/* 좌표 선택 테스트 */}
+              <Route
+                path={ROUTES.REAL_COORDINATE_SELECTION}
+                element={<CoordinateSelectionTestPage />}
               />
             </Routes>
           </main>
