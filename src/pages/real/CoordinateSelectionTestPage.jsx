@@ -44,16 +44,10 @@ const CoordinateSelectionTestPage = () => {
   }, []);
 
   const handleMapClick = (event) => {
-    setSelectedCoordinate(null);
-
     const coordinate = {
       lat: event.latLng.lat(),
       lng: event.latLng.lng(),
     };
-    // setTimeout(() => {
-    //   setSelectedCoordinate(coordinate);
-    //   setMapCenter(coordinate);
-    // }, 1000);
     setSelectedCoordinate(coordinate);
     setMapCenter(coordinate);
   };
@@ -64,7 +58,6 @@ const CoordinateSelectionTestPage = () => {
 
   const formatCoordinate = (coord) => {
     if (!coord) return "선택된 좌표가 없습니다";
-    console.log(coord);
     return `위도: ${coord.lat.toFixed(6)}, 경도: ${coord.lng.toFixed(6)}`;
   };
 
