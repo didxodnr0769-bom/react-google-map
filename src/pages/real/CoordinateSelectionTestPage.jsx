@@ -1,5 +1,5 @@
 // @src/pages/real/CoordinateSelectionTestPage.jsx
-import { GoogleMap, Circle, Marker } from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
 import "@/pages/map/MapPage.css";
 import MarkdownComponent from "@/components/Markdown";
 import React, { useState, useEffect } from "react";
@@ -12,6 +12,8 @@ const CoordinateSelectionTestPage = () => {
     lat: 37.5665,
     lng: 126.978,
   });
+  const [map, setMap] = useState(null);
+  const [currentCircle, setCurrentCircle] = useState(null);
 
   const mapOptions = {
     gestureHandling: "greedy",
@@ -24,14 +26,6 @@ const CoordinateSelectionTestPage = () => {
     scrollwheel: true,
     draggable: true,
     clickableIcons: false,
-  };
-
-  const circleOptions = {
-    strokeColor: "#FF0000",
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: "#FF0000",
-    fillOpacity: 0.15,
   };
 
   useEffect(() => {
@@ -48,11 +42,39 @@ const CoordinateSelectionTestPage = () => {
       lat: event.latLng.lat(),
       lng: event.latLng.lng(),
     };
+    console.log("🔵 Map clicked:", coordinate);
+
+    // 기존 circle 제거
+    if (currentCircle) {
+      console.log("🔵 Removing existing circle");
+      currentCircle.setMap(null);
+    }
+
     setSelectedCoordinate(coordinate);
-    setMapCenter(coordinate);
+
+    // 새로운 circle 생성
+    if (map) {
+      console.log("🔵 Creating new circle");
+      const circle = new window.google.maps.Circle({
+        strokeColor: "#FF0000",
+        strokeOpacity: 0.8,
+        strokeWeight: 2,
+        fillColor: "#FF0000",
+        fillOpacity: 0.15,
+        map: map,
+        center: coordinate,
+        radius: radius,
+      });
+      setCurrentCircle(circle);
+    }
   };
 
   const clearSelection = () => {
+    if (currentCircle) {
+      console.log("🔵 Clearing circle");
+      currentCircle.setMap(null);
+      setCurrentCircle(null);
+    }
     setSelectedCoordinate(null);
   };
 
@@ -62,10 +84,21 @@ const CoordinateSelectionTestPage = () => {
   };
 
   const handleRadiusChange = (event) => {
-    setRadius(parseInt(event.target.value));
+    const newRadius = parseInt(event.target.value);
+    setRadius(newRadius);
+
+    // 기존 circle 반경 업데이트
+    if (currentCircle) {
+      console.log("🔵 Updating circle radius:", newRadius);
+      currentCircle.setRadius(newRadius);
+    }
   };
 
-  console.log(JSON.stringify(selectedCoordinate));
+  console.log("🔵 Current state:", {
+    selectedCoordinate: JSON.stringify(selectedCoordinate),
+    radius,
+    hasCircle: !!currentCircle,
+  });
   return (
     <div className="map-page">
       <div className="map-container">
@@ -148,24 +181,18 @@ const CoordinateSelectionTestPage = () => {
           zoom={15}
           options={mapOptions}
           onClick={handleMapClick}
+          onLoad={setMap}
         >
           {selectedCoordinate && (
-            <React.Fragment>
-              <Marker
-                position={selectedCoordinate}
-                title={`선택된 좌표: ${formatCoordinate(selectedCoordinate)}`}
-                icon={{
-                  url: "data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='12' cy='12' r='10' fill='%23FF0000' stroke='%23FFFFFF' stroke-width='2'/%3e%3c/svg%3e",
-                  scaledSize: new window.google.maps.Size(24, 24),
-                  anchor: new window.google.maps.Point(12, 12),
-                }}
-              />
-              <Circle
-                center={selectedCoordinate}
-                radius={radius}
-                options={circleOptions}
-              />
-            </React.Fragment>
+            <Marker
+              position={selectedCoordinate}
+              title={`선택된 좌표: ${formatCoordinate(selectedCoordinate)}`}
+              icon={{
+                url: "data:image/svg+xml;charset=UTF-8,%3csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='12' cy='12' r='10' fill='%23FF0000' stroke='%23FFFFFF' stroke-width='2'/%3e%3c/svg%3e",
+                scaledSize: new window.google.maps.Size(24, 24),
+                anchor: new window.google.maps.Point(12, 12),
+              }}
+            />
           )}
         </GoogleMap>
       </div>
